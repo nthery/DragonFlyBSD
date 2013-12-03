@@ -162,7 +162,8 @@
 #define PWAKEUP_MYCPU	0x00004000	/* wakeup on current cpu only */
 #define PWAKEUP_ONE	0x00008000	/* argument to wakeup: only one */
 #define PDOMAIN_MASK	0xFFFF0000	/* address domains for wakeup */
-#define PDOMAIN_UMTX	0x00010000	/* independant domain for UMTX */
+#define PDOMAIN_USYNC	0x00010000	/* independant domain for user */
+					/* semaphores and mutexes */
 #define PDOMAIN_XLOCK	0x00020000	/* independant domain for fifo_lock */
 #define PWAKEUP_ENCODE(domain, cpu)	((domain) | (cpu))
 #define PWAKEUP_DECODE(domain)		((domain) & PWAKEUP_CPUMASK)
