@@ -302,4 +302,6 @@ MIASM =  \
 	eaccess.o \
 	lpathconf.o \
 	vmm_guest_ctl.o \
-	vmm_guest_sync_addr.o
+	vmm_guest_sync_addr.o \
+	usem_sleep.o \
+	usem_wakeup.o

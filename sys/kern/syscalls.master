@@ -747,3 +747,5 @@
 533	STD	{ int lpathconf(char *path, int name); }
 534	STD	{ int vmm_guest_ctl(int op, struct vmm_guest_options *options); }
 535	STD	{ int vmm_guest_sync_addr(long *dstaddr, long *srcaddr); }
+536	STD	{ int usem_sleep(volatile const int *ptr, int timeout); }
+537	STD	{ int usem_wakeup(volatile const int *ptr, int count); }

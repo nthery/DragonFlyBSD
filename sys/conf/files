@@ -905,6 +905,7 @@ kern/usched_dfly.c	standard
 kern/usched_dummy.c	standard
 kern/kern_usync.c	standard
 kern/kern_umtx.c	standard
+kern/kern_usem.c	standard
 kern/kern_mutex.c	standard
 kern/kern_refcount.c	standard
 kern/lwkt_thread.c	standard

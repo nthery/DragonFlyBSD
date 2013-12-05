@@ -410,4 +410,6 @@ union sysunion {
 	struct	lpathconf_args lpathconf;
 	struct	vmm_guest_ctl_args vmm_guest_ctl;
 	struct	vmm_guest_sync_addr_args vmm_guest_sync_addr;
+	struct	usem_sleep_args usem_sleep;
+	struct	usem_wakeup_args usem_wakeup;
 };

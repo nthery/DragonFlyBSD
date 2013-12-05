@@ -567,6 +567,8 @@ off_t	 __syscall(quad_t, ...);
 int	 ttyslot(void);
 int	 umtx_sleep(volatile const int *, int , int);
 int	 umtx_wakeup(volatile const int *, int);
+int	 usem_sleep(volatile const int *, int);
+int	 usem_wakeup(volatile const int *, int);
 int	 undelete(const char *);
 int	 unwhiteout(const char *);
 void	*valloc(size_t);			/* obsoleted by malloc() */

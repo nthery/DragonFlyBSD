@@ -2295,6 +2295,20 @@ struct	vmm_guest_sync_addr_args {
 	long *	dstaddr;	char dstaddr_[PAD_(long *)];
 	long *	srcaddr;	char srcaddr_[PAD_(long *)];
 };
+struct	usem_sleep_args {
+#ifdef _KERNEL
+	struct sysmsg sysmsg;
+#endif
+	volatile const int *	ptr;	char ptr_[PAD_(volatile const int *)];
+	int	timeout;	char timeout_[PAD_(int)];
+};
+struct	usem_wakeup_args {
+#ifdef _KERNEL
+	struct sysmsg sysmsg;
+#endif
+	volatile const int *	ptr;	char ptr_[PAD_(volatile const int *)];
+	int	count;	char count_[PAD_(int)];
+};
 
 #ifdef COMPAT_43
 
@@ -2904,6 +2918,8 @@ int	sys_eaccess (struct eaccess_args *);
 int	sys_lpathconf (struct lpathconf_args *);
 int	sys_vmm_guest_ctl (struct vmm_guest_ctl_args *);
 int	sys_vmm_guest_sync_addr (struct vmm_guest_sync_addr_args *);
+int	sys_usem_sleep (struct usem_sleep_args *);
+int	sys_usem_wakeup (struct usem_wakeup_args *);
 
 #endif /* !_SYS_SYSPROTO_H_ */
 #undef PAD_

@@ -544,4 +544,6 @@ const char *syscallnames[] = {
 	"lpathconf",			/* 533 = lpathconf */
 	"vmm_guest_ctl",			/* 534 = vmm_guest_ctl */
 	"vmm_guest_sync_addr",			/* 535 = vmm_guest_sync_addr */
+	"usem_sleep",			/* 536 = usem_sleep */
+	"usem_wakeup",			/* 537 = usem_wakeup */
 };
