@@ -46,12 +46,21 @@
 #include <fcntl.h>
 #endif
 
-/* Opaque type definition. */
-struct sem;
-typedef struct sem *sem_t;
+// TTT use standard-compliant names or make opaque
+enum sem_type {
+	SEM_UNNAMED,
+	SEM_NAMED
+};
+
+// TTT use standard-compliant names or make opaque
+struct sem {
+	volatile int value;
+	enum sem_type type;
+};
+typedef struct sem sem_t;
 
 #define SEM_FAILED	((sem_t *)0)
-#define SEM_VALUE_MAX	UINT_MAX
+#define SEM_VALUE_MAX	INT_MAX
 
 #ifndef _KERNEL
 #include <sys/cdefs.h>
@@ -66,7 +75,7 @@ int	 sem_wait (sem_t *);
 int	 sem_trywait (sem_t *);
 int	 sem_timedwait (sem_t * __restrict, const struct timespec * __restrict);
 int	 sem_post (sem_t *);
-int	 sem_getvalue (sem_t *, int *);
+int	 sem_getvalue (sem_t * __restrict, int * __restrict);
 __END_DECLS
 
 #endif

@@ -248,5 +248,3 @@ usync_wakeup(volatile const int *uptr, int count)
 done:
     return(error);
 }
-
-
